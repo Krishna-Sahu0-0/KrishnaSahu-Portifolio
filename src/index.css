@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-xl font-semibold hover:from-violet-700 hover:to-purple-700 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-violet-500/30 hover:shadow-xl hover:shadow-violet-500/40 hover:-translate-y-0.5;
+  }
+  
+  .btn-outline {
+    @apply px-8 py-3.5 border-2 border-violet-600 text-violet-600 dark:text-violet-400 dark:border-violet-400 rounded-xl font-semibold hover:bg-violet-600 dark:hover:bg-violet-500 hover:text-white transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 via-purple-600 to-pink-600 bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg border border-slate-200/50 dark:border-slate-700/50 rounded-2xl shadow-xl;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold text-center mb-16 gradient-text;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+}
+
+body.dark {
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
