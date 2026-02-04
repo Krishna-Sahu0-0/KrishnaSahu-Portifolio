@@ -41,6 +41,19 @@ export default function Navbar() {
 
   const navItems = ["About", "Skills", "Education", "Projects", "Contact"];
 
+  const handleNavClick = (e, item) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    
+    // Small delay to let the menu close animation finish
+    setTimeout(() => {
+      const element = document.getElementById(item.toLowerCase());
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   return (
     <nav ref={menuRef} className="fixed w-full z-50 transition-all duration-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -113,7 +126,7 @@ export default function Navbar() {
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, item)}
                     className="block px-4 py-2 text-slate-700 dark:text-slate-300 hover:bg-violet-50 dark:hover:bg-slate-800 hover:text-violet-600 dark:hover:text-violet-400 rounded-lg transition-colors font-medium"
                   >
                     {item}
