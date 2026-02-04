@@ -15,9 +15,15 @@ export const projects = [
   },
   {
     title: "Notes-Keeper React App",
-    tech: ["React", "JavaScript", "LocalStorage"],
+    tech: ["React", "JavaScript", "MongoDB", "Express", "Node.js"],
     description: "Feature-rich CRUD note-taking web application with search, categories, and persistent storage functionality.",
     github: "https://github.com/Krishna-Sahu0-0/Notes-KeeperApp",
     demo: "https://lustrous-dasik-869d6b.netlify.app/"
+  },
+  {
+    title: "AcciAlert - Accident Alert System",
+    tech: ["Arduino", "Sensors", "C++", "IoT", "GSM"],
+    description: "An Arduino-based system that automatically detects road accidents using sensors and sends real-time emergency alerts via GSM to reduce response time and save lives.",
+    github: "https://github.com/Krishna-Sahu0-0/Arduino-ShieldLightProject"
   },
 ];
