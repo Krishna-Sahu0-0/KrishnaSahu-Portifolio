@@ -4,5 +4,5 @@ export const skills = {
   Backend: ["Node.js", "Express.js"],
   Databases: ["MongoDB", "MySQL"],
   DataScience: ["Tableau", "NumPy", "Pandas", "Seaborn", "TensorFlow"],
-  Tools: ["Git", "GitHub", "VS Code", "Jupyter", "Google Colab"],
+  Tools: ["Git", "GitHub", "VS Code", "Jupyter"],
 };

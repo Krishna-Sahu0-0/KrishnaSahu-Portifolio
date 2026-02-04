@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Download, Mail, ArrowRight, Sparkles } from "lucide-react";
+import profilePhoto from "../data/IMG_20260204_192203.jpg.jpeg";
 
 export default function Hero() {
   return (
@@ -114,10 +115,12 @@ export default function Hero() {
           className="flex justify-center md:justify-end items-center order-first md:order-last md:-mt-12 md:mr-8"
         >
           <div className="relative">
-            {/* Placeholder for profile image - Circle shape */}
-            <div className="w-48 h-48 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-4xl md:text-6xl font-bold shadow-2xl shadow-violet-500/50">
-              KS
-            </div>
+            {/* Profile Image - Circle shape */}
+            <img 
+              src={profilePhoto} 
+              alt="Krishna Sahu" 
+              className="w-48 h-48 md:w-96 md:h-96 rounded-full object-cover shadow-2xl shadow-violet-500/50 ring-4 ring-violet-200 dark:ring-violet-900"
+            />
             {/* Decorative elements */}
             <div className="absolute -top-4 -right-4 w-16 h-16 md:w-24 md:h-24 bg-violet-500/20 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-4 -left-4 w-20 h-20 md:w-32 md:h-32 bg-purple-500/20 rounded-full blur-2xl"></div>

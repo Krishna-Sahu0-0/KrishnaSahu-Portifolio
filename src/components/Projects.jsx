@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { projects } from "../data/projects";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Award } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -50,6 +50,12 @@ export default function Projects() {
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
                       <Github size={16} />
                       <span>Code</span>
+                    </a>
+                  )}
+                  {p.certificate && (
+                    <a href={p.certificate} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+                      <Award size={16} />
+                      <span>Certificate</span>
                     </a>
                   )}
                   {p.demo && (
