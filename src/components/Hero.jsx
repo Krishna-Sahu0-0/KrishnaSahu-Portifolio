@@ -69,12 +69,12 @@ export default function Hero() {
             transition={{ delay: 0.7 }}
             className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 mb-8 md:mb-12 justify-center md:justify-start"
           >
-            <a href="/resume.pdf" className="btn-primary group">
+            <a href="/resume.pdf" className="btn-primary group justify-center">
               <Download size={20} />
               <span>Download Resume</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="#contact" className="btn-outline">
+            <a href="#contact" className="btn-outline justify-center">
               <Mail size={20} />
               <span>Get In Touch</span>
             </a>
@@ -114,8 +114,8 @@ export default function Hero() {
           className="flex justify-center md:justify-end items-center order-first md:order-last md:-mt-12 md:mr-8"
         >
           <div className="relative">
-            {/* Placeholder for profile image - Oval vertical shape */}
-            <div className="w-48 h-64 md:w-96 md:h-[420px] bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-4xl md:text-6xl font-bold shadow-2xl shadow-violet-500/50" style={{borderRadius: '50%/50%'}}>
+            {/* Placeholder for profile image - Circle shape */}
+            <div className="w-48 h-48 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-4xl md:text-6xl font-bold shadow-2xl shadow-violet-500/50">
               KS
             </div>
             {/* Decorative elements */}
