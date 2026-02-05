@@ -1,6 +1,7 @@
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import profilePhoto from "../data/IMG_20260204_192203.jpg.jpeg";
 
 export default function Navbar() {
   const [dark, setDark] = useState(false);
@@ -58,15 +59,30 @@ export default function Navbar() {
     <nav ref={menuRef} className="fixed w-full z-50 transition-all duration-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <motion.a
-            href="#"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="font-black text-2xl bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform"
-          >
-            Krishna Sahu
-          </motion.a>
+          {/* Logo with Profile Photo on Mobile when Scrolled */}
+          <div className="flex items-center gap-3">
+            <AnimatePresence>
+              {scrolled && (
+                <motion.img
+                  src={profilePhoto}
+                  alt="Krishna Sahu"
+                  initial={{ opacity: 0, scale: 0, x: 100 }}
+                  animate={{ opacity: 1, scale: 1, x: 0 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="w-10 h-10 rounded-full object-cover ring-2 ring-violet-400 md:hidden"
+                />
+              )}
+            </AnimatePresence>
+            <motion.a
+              href="#"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="font-black text-2xl bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform"
+            >
+              Krishna Sahu
+            </motion.a>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8 items-center">
