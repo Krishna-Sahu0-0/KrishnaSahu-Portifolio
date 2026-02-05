@@ -26,16 +26,17 @@ export default function Projects() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Auto-scroll functionality with smooth transition
+  // Auto-scroll functionality - desktop only
   useEffect(() => {
-    if (isDragging || itemsPerView === 1) return; // Disable auto-scroll on mobile
+    if (isDragging) return;
+    if (itemsPerView === 1) return; // Completely disable auto-scroll on mobile
     
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000); // 5s for desktop only
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentIndex, itemsPerView, isDragging]);
+  }, [currentIndex, isDragging, itemsPerView]);
 
   // Create extended array for infinite loop effect
   const extendedProjects = [...projects, ...projects, ...projects];
@@ -129,8 +130,10 @@ export default function Projects() {
               }}
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.1}
-              className="flex gap-6 md:gap-8 cursor-grab active:cursor-grabbing"
+              dragElastic={0.2}
+              dragMomentum={false}
+              className="flex gap-6 md:gap-8 cursor-grab active:cursor-grabbing touch-pan-y"
+              style={{ touchAction: 'pan-y' }}
             >
               {extendedProjects.map((p, i) => (
                 <motion.div
