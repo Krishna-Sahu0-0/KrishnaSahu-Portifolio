@@ -106,12 +106,12 @@ export default function Projects() {
           </button>
 
           {/* Carousel Track */}
-          <div className="overflow-hidden px-4">
+          <div className="overflow-hidden">
             <motion.div
               animate={{ 
                 x: itemsPerView === 1 
-                  ? `calc(-${currentIndex * 100}% - ${currentIndex * 1.5}rem + 1rem)` 
-                  : `calc(-${currentIndex * 33.333}% - ${currentIndex * 2.667}rem + 1rem)` 
+                  ? `calc(-${currentIndex} * (100% + 1.5rem))` 
+                  : `calc(-${currentIndex} * (33.333% + 0.667rem))` 
               }}
               transition={{
                 type: "tween",
@@ -137,7 +137,7 @@ export default function Projects() {
                   key={i}
                   className="group relative bg-white dark:bg-gradient-to-br dark:from-slate-800 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-violet-200 dark:border-slate-700 hover:border-violet-400 dark:hover:border-violet-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/20 flex-shrink-0"
                   style={{ 
-                    width: itemsPerView === 1 ? 'calc(100% - 2rem)' : 'calc(33.333% - 1.35rem)'
+                    width: itemsPerView === 1 ? '100%' : 'calc((100% - 4rem) / 3)'
                   }}
                 >
                   {/* Glow effect on hover */}
