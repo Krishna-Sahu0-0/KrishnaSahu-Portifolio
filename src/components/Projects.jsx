@@ -28,11 +28,11 @@ export default function Projects() {
 
   // Auto-scroll functionality with smooth transition
   useEffect(() => {
-    if (isDragging) return;
+    if (isDragging || itemsPerView === 1) return; // Disable auto-scroll on mobile
     
     const interval = setInterval(() => {
       nextSlide();
-    }, itemsPerView === 1 ? 3000 : 5000); // 3s for mobile, 5s for desktop
+    }, 5000); // 5s for desktop only
 
     return () => clearInterval(interval);
   }, [currentIndex, itemsPerView, isDragging]);
